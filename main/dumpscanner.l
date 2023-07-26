@@ -144,6 +144,7 @@ bool is_truncated() {
                                       }
 
 <ST_TRUNCATE>^(INSERT|REPLACE).*  { /* In truncate mode, skip statements */}
+<ST_TRUNCATE>^\(.*\)              { /* In truncate mode, skip statements */}
 <ST_TRUNCATE>.                    { DUPOUT }
 
 
